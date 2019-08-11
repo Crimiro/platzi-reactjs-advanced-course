@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { ListOfCategories } from './components/ListOfCategories/index'
 import { ListOfPhotoCards } from './container/ListOfPhotoCards'
 import { Logo } from './components/Logo'
+import { PhotoCardWithQuery } from './container/PhotoCardWithQuery'
 import { GlobalStyle } from './components/styles/GlobalStyles'
 
 export const App = () => {
@@ -13,7 +14,7 @@ export const App = () => {
       <Logo />
       {
         detailId
-          ? <h1>Detail Id</h1>
+          ? <PhotoCardWithQuery id={detailId} />
           : <Fragment>
             <ListOfCategories />
             <ListOfPhotoCards categoryId={2} />

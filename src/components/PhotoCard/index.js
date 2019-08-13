@@ -5,6 +5,7 @@ import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { useNearScreen } from '../../hooks/useNearScreen'
 import { FavButton } from '../FavButton/index'
 import { ToggleLikeMutation } from '../../container/ToogleLikeMutation'
+import { Link } from '@reach/router'
 
 const DEFAULT_IMAGE = 'https://res.cloudinary.com/midudev/image/upload/w_150/v1555671700/category_cats.jpg'
 
@@ -17,11 +18,11 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
     <Article ref={element}>
       {
         show && <Fragment>
-          <a href={`/?detail=${id}`}>
+          <Link to={`/detail/${id}`}>
             <ImgWrapper>
               <Img src={src} />
             </ImgWrapper>
-          </a>
+          </Link>
           <ToggleLikeMutation>
             {
               (toggleLike) => {

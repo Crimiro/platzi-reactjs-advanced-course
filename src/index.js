@@ -4,7 +4,6 @@ import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 import Context from './Context'
 import { App } from './App'
-import { networkInterfaces } from 'os'
 
 const client = new ApolloClient({
   uri: 'https://petgram-server-crimiro.crimiro.now.sh/graphql',
